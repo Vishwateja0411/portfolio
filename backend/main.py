@@ -33,6 +33,8 @@ class Profile(BaseModel):
     summary: str
     about: str
     skills: List[str]
+    github: str = ""
+    linkedin: str = ""
 
 class Certificate(BaseModel):
     id: int
@@ -54,7 +56,9 @@ async def get_profile():
              "Python, SQL, C++",
             "JavaScript, React, FastAPI, and modern web tools",
             "Artificial Intelligence, Machine Learning and modern AI tools"
-        ]
+        ],
+        github="https://github.com/Vishwateja0411",
+        linkedin="https://linkedin.com/in/your-linkedin"
     )
 
 @app.get("/api/projects", response_model=List[Project])
@@ -65,14 +69,14 @@ async def get_projects():
             title="Safety-Aware Multi-Agent Financial Assistant",
             description="Developed a FastAPI AI microservice with 4+ workflows for safety screening, intent classification, agent routing, and SSE streaming, including a 95%+ harmful-query recall guard and 12/12 passing tests. Demo runs locally; source code is available on GitHub.",
             link="https://github.com/Vishwateja0411/Safety-Aware-Multi-Agent-Financial-Assistant",
-            link_text="View Code →"
+            link_text="View Github Repo →"
         ),
         Project(
             id=2,
             title="Real-Time Expert Session Booking System",
             description="Created a MERN stack booking platform with real-time slot syncing via Socket.io, duplicate-booking protection, and responsive booking workflows for 50+ expert slots and records.",
-            link="https://github.com/Vishwateja0411/Expert_Booking_System",
-            link_text="View Code →"
+            link="https://expert-booking-system-ddfx.vercel.app",
+            link_text="View Web App →"
         ),
         Project(
             id=3,

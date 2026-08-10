@@ -61,6 +61,18 @@ function App() {
                 <li key={index}>{skill}</li>
               ))}
             </ul>
+            <div className="profile-links">
+              {profile.linkedin && (
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
+                  LinkedIn
+                </a>
+              )}
+              {profile.github && (
+                <a href={profile.github} target="_blank" rel="noopener noreferrer" className="social-link">
+                  GitHub
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </header>
