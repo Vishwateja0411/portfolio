@@ -8,15 +8,12 @@ app = FastAPI(title="Portfolio API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://vishwa-portfolio.vercel.app"], 
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # In production, specify the actual frontend URL
+    allow_origins=[
+        "https://vishwa-portfolio-coral.vercel.app", 
+        "https://vishwa-portfolio.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:8080"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
