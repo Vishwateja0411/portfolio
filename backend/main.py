@@ -58,7 +58,7 @@ async def get_profile():
             "Artificial Intelligence, Machine Learning and modern AI tools"
         ],
         github="https://github.com/Vishwateja0411",
-        linkedin="https://linkedin.com/in/your-linkedin"
+        linkedin="https://www.linkedin.com/in/donikena-vishwateja-9991a5341"
     )
 
 @app.get("/api/projects", response_model=List[Project])

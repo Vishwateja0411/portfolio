@@ -43,6 +43,12 @@ function App() {
             <a href="#projects" className="btn btn--primary">View Projects</a>
             <a href="#certificates" className="btn btn--secondary">Certificates</a>
             <a href="/resume.pdf" className="btn btn--secondary" target="_blank" rel="noopener noreferrer">Resume</a>
+            {profile.linkedin && (
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">LinkedIn</a>
+            )}
+            {profile.github && (
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">GitHub</a>
+            )}
           </div>
         </div>
         <div className="hero__profile">
@@ -61,18 +67,6 @@ function App() {
                 <li key={index}>{skill}</li>
               ))}
             </ul>
-            <div className="profile-links">
-              {profile.linkedin && (
-                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
-                  LinkedIn
-                </a>
-              )}
-              {profile.github && (
-                <a href={profile.github} target="_blank" rel="noopener noreferrer" className="social-link">
-                  GitHub
-                </a>
-              )}
-            </div>
           </div>
         </div>
       </header>
