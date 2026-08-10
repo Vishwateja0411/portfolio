@@ -8,13 +8,15 @@ function App() {
   const [certificates, setCertificates] = useState([]);
 
   useEffect(() => {
-    // Fetch data from FastAPI backend
+    // Use environment variable for deployed API URL, fallback to localhost for development
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const fetchData = async () => {
       try {
         const [profileRes, projectsRes, certsRes] = await Promise.all([
-          axios.get('http://localhost:8080/api/profile'),
-          axios.get('http://localhost:8080/api/projects'),
-          axios.get('http://localhost:8080/api/certificates')
+          axios.get(`${API_URL}/api/profile`),
+          axios.get(`${API_URL}/api/projects`),
+          axios.get(`${API_URL}/api/certificates`)
         ]);
         setProfile(profileRes.data);
         setProjects(projectsRes.data);
